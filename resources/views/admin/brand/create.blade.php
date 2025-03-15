@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Smoke House</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
     <!-- Styles -->
     @vite('resources/css/app.css')
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="container mx-auto p-6">
@@ -27,7 +21,7 @@
     </div>
 @endif
 <h1 class="text-2xl font-bold mb-6">Добавление бренда</h1>
-    <form action="{{ route('brand.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.brand.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="name">

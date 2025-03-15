@@ -1,5 +1,5 @@
 import './bootstrap';
-
+import './jquery-3.6.0.min'
 
 $(document).ready(function () {
     function closeMenu() {
