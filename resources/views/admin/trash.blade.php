@@ -78,12 +78,12 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center">
                                     <div class="space-y-2 flex flex-col items-center">
-                                        <button class="edit-button px-4 py-2 cursor-pointer bg-yellow-500 hover:bg-yellow-600 transition-colors text-white rounded-lg flex items-center justify-center gap-2"
+                                        <button class="edit-button px-4 py-2 cursor-pointer bg-yellow-500 hover:bg-yellow-600 transition-colors text-white rounded-lg flex items-center justify-center gap-2 w-full"
                                                 data-id="{{ $tr->id }}">
                                             <span class="material-icons">edit</span>
                                             <a href="{{ route('admin.product.edit',$tr->id) }}">Изменить</a>
                                         </button>
-                                        <form action="{{ route('admin.product.restore', $tr->id) }}" method="POST" class="inline-block">
+                                        <form class="w-full" action="{{ route('admin.product.restore', $tr->id) }}" method="POST">
                                             @csrf
                                             <button type="submit" class="submit-button px-4 py-2 bg-green-500 hover:bg-green-600 cursor-pointer transition-colors text-white rounded-lg flex items-center justify-center gap-2 w-full"
                                                     data-id="{{ $tr->id }}">
@@ -91,7 +91,7 @@
                                                 Восстановить
                                             </button>
                                         </form>
-                                        <form action="{{ route('admin.product.forceDelete', $tr->id) }}" method="POST">
+                                        <form class="w-full" action="{{ route('admin.product.forceDelete', $tr->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="delete-button px-4 py-2 cursor-pointer bg-red-500 hover:bg-red-600 transition-colors text-white rounded-lg flex items-center justify-center gap-2 w-full">

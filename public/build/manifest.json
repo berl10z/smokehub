@@ -1,11 +1,15 @@
 {
+  "public/fonts/material-icons.woff2": {
+    "file": "assets/material-icons-kAwBdRge.woff2",
+    "src": "public/fonts/material-icons.woff2"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-Ih0HNA0a.css",
+    "file": "assets/app-Ce6otmZp.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-cXgpHdmo.js",
+    "file": "assets/app-xN2xqGnT.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
