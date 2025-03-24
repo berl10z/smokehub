@@ -14,7 +14,6 @@ $(document).ready(function () {
             );
     }
 
-    // Открытие и закрытие меню
     $("#burger-btn, #close-btn").click(function () {
         $("#mobile-menu").toggleClass("-translate-y-full translate-y-0");
         $("#burger-btn").toggleClass("menu-open");
@@ -31,7 +30,6 @@ $(document).ready(function () {
             .toggleClass("-rotate-45 -translate-y-1.5");
     });
 
-    // Закрытие при изменении размера экрана
     $(window).resize(function () {
         if ($(window).width() >= 768) {
             closeMenu();

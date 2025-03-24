@@ -48,12 +48,16 @@ Route::middleware('auth')->group(function(){
             Route::get('/', [CategoryController::class,'index'])->name('category.index');
             Route::get('/create', [CategoryController::class,'create'])->name('category.create');
             Route::post('/store', [CategoryController::class,'store'])->name('category.store');
-            Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+            Route::get('/edit/{id}', [CategoryController::class,'edit'])->name('category.edit');
+            Route::put('/edit/{id}', [CategoryController::class,'update'])->name('category.update');
+            Route::delete ('/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
         });
         Route::prefix('brands')->group(function() {
             Route::get('/', [BrandController::class,'index'])->name('brand.index');
             Route::get('/create', [BrandController::class,'create'])->name('brand.create');
             Route::post('/store', [BrandController::class,'store'])->name('brand.store');
+            Route::get('/edit/{id}', [BrandController::class,'edit'])->name('brand.edit');
+            Route::put('/edit/{id}', [BrandController::class,'update'])->name('brand.update');
             Route::delete('/{id}', [BrandController::class, 'destroy'])->name('brand.destroy');
         });
     });

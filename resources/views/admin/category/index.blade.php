@@ -44,6 +44,11 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center">
                                     <div class="space-y-2 flex flex-col items-center">
+                                        <button class="edit-button px-4 py-2 cursor-pointer bg-yellow-500 hover:bg-yellow-600 transition-colors text-white rounded-lg flex items-center justify-center gap-2">
+                                            <a href="{{ route('admin.category.edit', $сategory->id) }}">
+                                                <span class="material-icons">edit</span>
+                                                Изменить</a>
+                                        </button>
                                         <form action="{{ route('admin.category.destroy', $сategory->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')

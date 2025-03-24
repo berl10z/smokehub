@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,6 @@ class CategoryController extends Controller
         return view('admin.category.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(CategoryStoreRequest $r)
     {
         $data = $r->validated();
@@ -31,22 +29,23 @@ class CategoryController extends Controller
     }
 
 
-    // public function edit(Category $category)
-    // {
-    //     //
-    // }
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view('admin.category.edit', compact('category'));
+    }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, Category $category)
-    // {
-    //     //
-    // }
+    public function update(UpdateCategoryRequest $r,$id)
+    {
+        $validatedData = $r->validated();
 
-    /**
-     * Remove the specified resource from storage.
-     */
+        $category = Category::findOrFail($id);
+
+        $category->update($validatedData);
+
+        return to_route('admin.category.index')->with('success', 'Категория успешна обновлена!');
+    }
+
     public function destroy($id)
     {
         $category = Category::find($id);

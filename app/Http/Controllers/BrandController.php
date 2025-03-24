@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateBrandRequest;
 use App\Models\Brand;
 use App\Http\Requests\BrandStoreRequest;
 use Illuminate\Http\Request;
@@ -19,9 +20,7 @@ class BrandController extends Controller
         return view('admin.brand.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(BrandStoreRequest $r)
     {
         $data = $r->validated();
@@ -36,22 +35,24 @@ class BrandController extends Controller
     }
 
 
-    // public function edit (Category $category)
-    // {
-    //     //
-    // }
+    public function edit($id)
+    {
+        $brand = Brand::findOrFail($id);
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, Category $category)
-    // {
-    //     //
-    // }
+        return view('admin.brand.edit',compact('brand'));
+    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    public function update(UpdateBrandRequest $r, $id)
+    {
+        $validatedData = $r->validated();
+
+        $brand = Brand::findOrFail($id);
+
+        $brand->update($validatedData);
+
+        return to_route('admin.brand.index')->with('success', 'Бренд успешно обновлен!');
+    }
+
     public function destroy($id)
     {
         $brand = Brand::find($id);
