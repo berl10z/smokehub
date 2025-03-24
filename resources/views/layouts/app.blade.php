@@ -29,7 +29,7 @@
         @endauth
         <div class="text-center">
             <a href="https://t.me/smoke_house55" target="_blank" class="tg-logo">
-            <img class="w-[25px] h-auto" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="">
+            <img class="w-[25px] h-auto" src="{{ asset('images/Telegram_logo.svg') }}" alt="">
         </a>
         </div>
     </nav>
@@ -59,7 +59,7 @@
         <li>
             <div class="text-center">
                 <a href="https://t.me/smoke_house55" target="_blank" class="mobile-link">
-                    <img class="w-10 h-auto" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="">
+                    <img class="w-10 h-auto" src="{{ asset('images/Telegram_logo.svg') }}" alt="">
                 </a>
             </div>
         </li>
